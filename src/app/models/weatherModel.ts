@@ -27,6 +27,6 @@ export class WheatherModel {
         this.is_day = is_day;
         this.feelslike_c = feelslike_c;
         this.feelslike_f = feelslike_f;
-        this.condition = condition;
+        this.condition = condition || { icon: '', text: '' };
     }
 }

@@ -1,12 +1,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-Title {
-  font-family:'Courier New', Courier, monospace ;
-  padding: 10px;
-}
-
-body{
-  background-image: linear-gradient(to right top, #e5ac0b, #e89b00, #ea8800, #eb7504, #eb6112);
-}
