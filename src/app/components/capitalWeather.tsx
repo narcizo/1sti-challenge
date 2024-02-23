@@ -36,9 +36,7 @@ export default function CapitalWeather({ isImperial }: { isImperial: boolean}) {
             setWeatherData(data)
         }catch(err: any){
             console.error("Error fetching Data: ", err);
-            console.log(err.code)
             if(err?.code == "ERR_NETWORK"){
-                console.log("sem conexão");
                 messageApi.open({
                     type: 'error',
                     content: 'Sem conexão',

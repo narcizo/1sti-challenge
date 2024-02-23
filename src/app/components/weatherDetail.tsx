@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { WheatherModel } from '../models/weatherModel';
-import { Skeleton, Card, Typography, Row, Col, Descriptions } from 'antd';
+import { Skeleton, Card, Typography, Row, Col, Descriptions, message } from 'antd';
 import Image from 'next/image';
 
 import WeatherApi from '../services/weatherApi';
@@ -9,6 +9,7 @@ const { Title }= Typography;
 
 export default function WeatherDetail({ city, loading, onFinishLoading, isImperial } : { city: string, loading: boolean, onFinishLoading: (b: boolean) => void, isImperial: boolean}) {
     const [weather, setWeather] = useState<WheatherModel>();
+    const [messageApi, contextHolder] = message.useMessage();
 
     useEffect(() => {
         fetchData();
@@ -16,9 +17,15 @@ export default function WeatherDetail({ city, loading, onFinishLoading, isImperi
 
     if (city.length < 3) return (<></>);
 
+    const skeleton = (
+        <Card className='bg-day-200'>
+            <Skeleton active />
+        </Card>
+    );
+
     async function fetchData(){
         if(city.length <= 3) return;
-        
+
         const weatherApi = new WeatherApi();
         try{
             const weatherResponse = await weatherApi.getWeather(city);
@@ -26,6 +33,12 @@ export default function WeatherDetail({ city, loading, onFinishLoading, isImperi
         }catch(err: any){
             if (err.response?.status === 400){
                 console.log("Cidade não encontrada: ", city);
+            }
+            if(err?.code == "ERR_NETWORK"){
+                messageApi.open({
+                    type: 'error',
+                    content: 'Sem conexão',
+                });
             }
         }
         finally{
@@ -35,7 +48,8 @@ export default function WeatherDetail({ city, loading, onFinishLoading, isImperi
 
     return (
         <div className='py-4'>
-            {loading && <Card className='bg-day-200'><Skeleton active/></Card>}
+            {contextHolder}
+            {loading && skeleton}
             {
                 loading ||
                 <Card 
