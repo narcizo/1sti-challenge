@@ -17,6 +17,8 @@ export default function WeatherDetail({ city, loading, onFinishLoading, isImperi
     if (city.length < 3) return (<></>);
 
     async function fetchData(){
+        if(city.length <= 3) return;
+        
         const weatherApi = new WeatherApi();
         try{
             const weatherResponse = await weatherApi.getWeather(city);

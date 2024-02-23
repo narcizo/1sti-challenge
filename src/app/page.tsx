@@ -35,7 +35,7 @@ export default function Home() {
 
   return (
     <>
-    <Flex justify="center" align='center' className='bg-gradient-to-r from-background-1 to-background-4'>
+    <Flex justify="center" className='min-h-screen overflow-auto bg-gradient-to-r from-background-1 to-background-4'>
         <Col xs={22} md={18}>
           <Title className='flex justify-center p-3 text-white'>Previsão do tempo</Title>
           <div className='flex items-center justify-center'>

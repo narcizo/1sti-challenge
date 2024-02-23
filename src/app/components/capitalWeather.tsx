@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 
-import { Card, Row, Col, Typography, Skeleton, Descriptions } from 'antd';
+import { Card, Row, Col, Typography, Skeleton, Descriptions, Button, message} from 'antd';
 
 const { Title } = Typography;
 
@@ -12,36 +12,51 @@ const weatherApi = new WeatherApi();
 
 export default function CapitalWeather({ isImperial }: { isImperial: boolean}) {
     const [weatherData, setWeatherData] = useState<WheatherModel[]>(Array(0));
+    const [reload, setReload] = useState(false);
+    const [messageApi, contextHolder] = message.useMessage();
 
-    const capitals: string[] = [
-        "Maringá",
-        "São Paulo",
-        "Rio de Janeiro",
-        "Nagasaki",
-        "Florianópolis",
-        "Tokio",
-        "Londres",
-        "Los Angeles"
-    ];
+    const fetchData = useMemo(() => async () => {
+        const capitals: string[] = [
+            "Maringá",
+            "São Paulo",
+            "Rio de Janeiro",
+            "Nagasaki",
+            "Florianópolis",
+            "Tokio",
+            "Londres",
+            "Los Angeles"
+        ];
 
-    async function fetchData(){
-        const promises = capitals.map((capital) => {
-            return weatherApi.getWeather(capital);
-        });
-    
-        Promise.all(promises).then((values) => {
-            setWeatherData(values);
-        });
-    }
+        try{
+            const promises = capitals.map((capital: string) => {
+                return weatherApi.getWeather(capital);
+            });
+            
+            const data = await Promise.all(promises);
+            setWeatherData(data)
+        }catch(err: any){
+            console.error("Error fetching Data: ", err);
+            console.log(err.code)
+            if(err?.code == "ERR_NETWORK"){
+                console.log("sem conexão");
+                messageApi.open({
+                    type: 'error',
+                    content: 'Sem conexão',
+                });
+            }
+        }finally{
+            setReload(false);
+        }
+    }, [reload]);
     
     useEffect(() => {
         fetchData();
-    }, []);
+    }, [fetchData]);
 
-    if (weatherData.length === 0){
-        return (
+    let emptyWeather = null;
+    if (weatherData.length === 0 || reload){
+        emptyWeather = (
             <>
-                <Title level={3} className='p-3 text-slate-50'>Capitais</Title>
                 <Col sm={6} md={12}>
                     <Card className='m-3 bg-transparent border-amber-700'>
                         <Skeleton active />
@@ -84,9 +99,13 @@ export default function CapitalWeather({ isImperial }: { isImperial: boolean}) {
 
     return (
         <>
-            <Title level={2} className='p-3 text-slate-50'>Capitais</Title>
+            {contextHolder}
+            <div className='flex items-center justify-between'>
+                <Title level={2} className='p-3 m-0 text-slate-50'>Capitais</Title>
+                <Button loading={reload} onClick={() => setReload(true)} className='bg-background-5 border-none	text-white mr-1'>Recarregar</Button>
+            </div>
             <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
-                {capitalsJsx}
+                {emptyWeather || capitalsJsx}
             </Row>
         </>
     );
