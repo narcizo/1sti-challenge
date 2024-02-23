@@ -7,7 +7,7 @@ export class WheatherModel {
     temp_c: number;
     temp_f: number;
     humidity: number;
-    is_day: number;
+    is_day: boolean;
     feelslike_c: number;
     feelslike_f: number;
     condition: {
@@ -15,7 +15,7 @@ export class WheatherModel {
         text: string;
     };
 
-    constructor(cityName: string, country: string, region: string, lat: number, lon: number, temp_c: number, temp_f: number, humidity: number, is_day: number, feelslike_c: number, feelslike_f: number, condition: { icon: string; text: string; }) {
+    constructor(cityName: string, country: string, region: string, lat: number, lon: number, temp_c: number, temp_f: number, humidity: number, is_day: boolean, feelslike_c: number, feelslike_f: number, condition: { icon: string; text: string; }) {
         this.cityName = cityName;
         this.country = country;
         this.region = region;

@@ -17,7 +17,7 @@ export default class WeatherApi{
             const weather = new WheatherModel(data.location.name, data.location.country, data.location.region, data.location.lat, data.location.lon, data.current.temp_c, data.current.temp_f, data.current.humidity, data.current.is_day, data.current.feelslike_c, data.current.feelslike_f, {icon: data.current.condition.icon.replace("//", "https://"), text: data.current.condition.text});
             return weather;
         }catch(err){
-            console.log("ERROR@WeatherApi.getWeather: ", err);
+            console.error("ERROR@WeatherApi.getWeather: ", err);
             throw err;
         }
     }

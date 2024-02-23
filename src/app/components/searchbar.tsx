@@ -11,7 +11,7 @@ export default function SearchBar({ text, onChange }: { text: string, onChange: 
             placeholder={placeholderText}
             allowClear
             onChange={(e) => onChange(e.target.value)}
-            className='p-3 c-white'
+            className='w-9/12 md:w-full p-3 c-white'
             />
         </>
     );

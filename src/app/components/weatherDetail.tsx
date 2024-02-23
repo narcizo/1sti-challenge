@@ -20,7 +20,6 @@ export default function WeatherDetail({ city, loading, onFinishLoading, isImperi
         const weatherApi = new WeatherApi();
         try{
             const weatherResponse = await weatherApi.getWeather(city);
-            console.log(weatherResponse);
             setWeather(weatherResponse);
         }catch(err: any){
             if (err.response?.status === 400){
@@ -28,7 +27,6 @@ export default function WeatherDetail({ city, loading, onFinishLoading, isImperi
             }
         }
         finally{
-            console.log("finally")
             onFinishLoading(false);
         }
     }
@@ -43,7 +41,7 @@ export default function WeatherDetail({ city, loading, onFinishLoading, isImperi
                 bordered={false}
                 className={`${weather?.is_day ? "bg-day-50" : "bg-night-100"}`}
                 >
-                    <div className='flex justify-start'>
+                    <div className='flex justify-between sm:justify-start'>
                         <Title className='pt-3' level={2}>{weather?.cityName}</Title>
                         <Image className='justify-end' src={weather?.condition.icon} alt={weather?.condition.text} width={70} height={70}/>
                     </div>

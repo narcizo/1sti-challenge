@@ -42,7 +42,7 @@ export default function CapitalWeather({ isImperial }: { isImperial: boolean}) {
         return (
             <>
                 <Title level={3} className='p-3 text-slate-50'>Capitais</Title>
-                <Col span={12}>
+                <Col sm={6} md={12}>
                     <Card className='m-3 bg-transparent border-amber-700'>
                         <Skeleton active />
                     </Card>
@@ -53,8 +53,8 @@ export default function CapitalWeather({ isImperial }: { isImperial: boolean}) {
     const capitalsJsx = weatherData.map((weather: WheatherModel) => {
         if (!weather) return <></>;
         return (
-            <Col key={weather.lat} span={12}>
-                <Card hoverable className={`m-3 bg-transparent border-amber-700 hover:${weather?.is_day ? "bg-day-200" : "bg-night-100"}`}>
+            <Col key={weather.lat} xs={24} sm={12} md={8} lg={8} xxl={6}>
+                <Card hoverable className={`m-1 bg-transparent border-amber-700 hover:${weather?.is_day ? "bg-day-200" : "bg-night-100"}`}>
                     <div className='flex justify-between'>
                         <Title className='pt-3' level={4}>{weather?.cityName}</Title>
                         {
