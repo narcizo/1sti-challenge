@@ -82,8 +82,8 @@ export default function WeatherDetail({
                         </Title>
                         <Image
                             className="justify-end"
-                            src={weather?.condition.icon}
-                            alt={weather?.condition.text}
+                            src={weather?.condition.icon ?? '/public/no_data.png'}
+                            alt={weather?.condition.text ?? 'current weather icon'}
                             width={70}
                             height={70}
                         />
