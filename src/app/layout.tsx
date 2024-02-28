@@ -1,16 +1,16 @@
 export const metadata = {
-  title: 'Weather App',
-  description: '1STi Challenge',
-}
+    title: 'Weather App',
+    description: '1STi Challenge',
+};
 
 export default function RootLayout({
-  children,
+    children,
 }: {
-  children: React.ReactNode
+    children: React.ReactNode;
 }) {
-  return (
-    <html lang="en">
-      <body>{children}</body>
-    </html>
-  )
+    return (
+        <html lang="en">
+            <body>{children}</body>
+        </html>
+    );
 }

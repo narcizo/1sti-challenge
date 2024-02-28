@@ -6,14 +6,19 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "format": "prettier --write \"src/**/*{.ts,.tsx}\"",
     "lint": "next lint"
   },
   "dependencies": {
     "@ant-design/icons": "^5.3.0",
+    "@testing-library/jest-dom": "^6.4.2",
+    "@testing-library/react": "^14.2.1",
+    "@testing-library/user-event": "^14.5.2",
     "antd": "^5.14.1",
     "axios": "^1.6.7",
     "lodash": "^4.17.21",
     "next": "14.1.0",
+    "prettier": "^3.2.5",
     "react": "^18",
     "react-dom": "^18"
   },
