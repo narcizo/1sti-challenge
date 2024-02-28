@@ -7,6 +7,8 @@ export default class WeatherApi {
     });
 
     public async getWeather(city: string): Promise<WheatherModel> {
+        console.log('api url: ', process.env.NEXT_PUBLIC_WEATHER_API_BASE_URL);
+        console.log('api key: ', process.env.NEXT_PUBLIC_WEATHER_API_KEY);
         try {
             const response = await this.apiService.get(
                 `/current.json?key=${process.env.NEXT_PUBLIC_WEATHER_API_KEY}&q=${city}&lang="pt"`,
