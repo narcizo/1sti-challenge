@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useCallback } from 'react';
-import { Typography, Switch, Col, Flex } from 'antd';
+import { Typography, Switch, Col, Flex, Button } from 'antd';
 import { CheckOutlined, CloseOutlined } from '@ant-design/icons';
 import debounce from 'lodash/debounce';
 
@@ -37,7 +37,7 @@ export default function Home() {
     <>
     <Flex justify="center" className='min-h-screen overflow-auto bg-gradient-to-r from-background-1 to-background-4'>
         <Col xs={22} md={18}>
-          <Title className='flex justify-center p-3 text-white'>Previsão do tempo</Title>
+          <Title className='flex p-3 justify-center text-white pb-0'>Previsão do tempo</Title>
           <div className='flex items-center justify-center'>
             <SearchBar
             text={inputText}
@@ -45,13 +45,13 @@ export default function Home() {
             />
           </div>
           <div className='flex items-center justify-center md:items-start md:justify-start'>
-            <div className='w-44 flex justify-center p-3 mt-3 mb-3 bg-background-5 w-30 rounded-full'>
+            <div className='w-48 flex justify-center p-3 mt-3 mb-3 bg-background-5 w-30 rounded-full'>
               <Switch 
               value={useImperial}
               onChange={(checked) => setUseImperial(checked)}
               checkedChildren={<CheckOutlined />}
               unCheckedChildren={<CloseOutlined />}/>
-              <p className='ml-3 text-white'>Usar imperial</p>
+              <p className='ml-3 text-lg text-white'>Usar imperial</p>
             </div>
           </div>
           <WeatherDetail city={searchQuery} loading={loading} onFinishLoading={setLoading} isImperial={useImperial}/>

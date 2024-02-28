@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
 import { WheatherModel } from '../models/weatherModel';
-import { Skeleton, Card, Typography, Row, Col, Descriptions, message } from 'antd';
+import { Skeleton, Card, Typography, Row, Col, Descriptions, message, Button } from 'antd';
 import Image from 'next/image';
 
 import WeatherApi from '../services/weatherApi';
+import { MailOutlined } from '@ant-design/icons';
 
 const { Title }= Typography;
 
@@ -76,12 +77,16 @@ export default function WeatherDetail({ city, loading, onFinishLoading, isImperi
                             </Col>
                         )
                         }
-                        <Col span={20}>
+                        <Col span={16}>
                             <Descriptions>
                                 <Descriptions.Item label="País">{weather?.country}</Descriptions.Item>
                                 <Descriptions.Item label="Região">{weather?.region}</Descriptions.Item>
                                 <Descriptions.Item label="Umidade">{weather?.humidity}</Descriptions.Item>
                             </Descriptions>
+                        </Col>
+                        <Col span={8} className='flex justify-end items-end'>
+                            <Button shape="circle" size="large" icon={<MailOutlined />} className={`${weather?.is_day ? "bg-day-100" : "bg-night-200"} border-none hover:shadow-xl`}>
+                            </Button>
                         </Col>
                     </Row>
                 </Card>

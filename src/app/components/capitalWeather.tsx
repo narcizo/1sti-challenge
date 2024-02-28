@@ -100,7 +100,7 @@ export default function CapitalWeather({ isImperial }: { isImperial: boolean}) {
             {contextHolder}
             <div className='flex items-center justify-between'>
                 <Title level={2} className='p-3 m-0 text-slate-50'>Capitais</Title>
-                <Button loading={reload} onClick={() => setReload(true)} className='bg-background-5 border-none	text-white mr-1'>Recarregar</Button>
+                <Button loading={reload} onClick={() => setReload(true)} className='bg-background-5 border-none rounded-full text-lg	text-white mr-1 pb-9'>Recarregar</Button>
             </div>
             <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
                 {emptyWeather || capitalsJsx}
