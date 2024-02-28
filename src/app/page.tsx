@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useCallback } from 'react';
-import { Typography, Switch, Col, Flex, Button } from 'antd';
+import { Typography, Switch, Col, Flex } from 'antd';
 import { CheckOutlined, CloseOutlined } from '@ant-design/icons';
 import debounce from 'lodash/debounce';
 
