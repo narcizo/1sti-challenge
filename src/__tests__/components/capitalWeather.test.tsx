@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
-import CapitalWeather from '../../app/components/capitalWeather';
+import CapitalWeather from '@/app/components/capitalWeather';
 
 window.matchMedia = window.matchMedia || function() {
     return {
@@ -10,8 +10,13 @@ window.matchMedia = window.matchMedia || function() {
     };
 };
 
-it('renders the capital weather component', () => {
-    render(<CapitalWeather isImperial={false} />);
-    const linkElement = screen.getByTestId('capitalsComponent');
-    expect(linkElement).toBeInTheDocument();
+describe('CapitalWeather', () => {
+    it('Should render the capital weather component', () => {
+        render(<CapitalWeather isImperial={false} />);
+        const staticHeader = screen.getByTestId('capitalsComponent');
+        // const apiCard = screen.getByText('Maringá'); //pq esse não funciona?
+
+        expect(staticHeader).toBeInTheDocument();
+        // expect(apiCard).toBeInTheDocument();
+    });
 });

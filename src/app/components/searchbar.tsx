@@ -1,17 +1,20 @@
 import { Input } from 'antd';
 
+type SearchBarProps = {
+    text: string;
+    onChange: (e: string) => void;
+}
+
 export default function SearchBar({
     text,
     onChange,
-}: {
-    text: string;
-    onChange: (e: string) => void;
-}) {
+}: SearchBarProps) {
     const placeholderText = 'Insira aqui o nome da sua cidade';
 
     return (
         <>
             <Input
+                data-testid="searchBarComponent"
                 value={text}
                 placeholder={placeholderText}
                 allowClear
