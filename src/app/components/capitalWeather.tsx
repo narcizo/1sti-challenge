@@ -17,13 +17,15 @@ import WeatherApi from '../services/weatherApi';
 import { WheatherModel } from '../models/weatherModel';
 import { MoonOutlined, SunOutlined } from '@ant-design/icons';
 
+type CapitalWeatherProps = {
+    isImperial: boolean;
+};
+
 const weatherApi = new WeatherApi();
 
 export default function CapitalWeather({
     isImperial,
-}: {
-    isImperial: boolean;
-}) {
+}: CapitalWeatherProps) {
     const [weatherData, setWeatherData] = useState<WheatherModel[]>(Array(0));
     const [reload, setReload] = useState(false);
     const [messageApi, contextHolder] = message.useMessage();
