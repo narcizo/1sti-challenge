@@ -127,7 +127,7 @@ export default function CapitalWeather({
     return (
         <>
             {contextHolder}
-            <div className="group flex items-center justify-between">
+            <div data-testid='capitalsComponent' className="group flex items-center justify-between">
                 <Title level={2} className="p-3 m-0 text-slate-50">
                     Capitais
                 </Title>
