@@ -16,6 +16,13 @@ import Image from 'next/image';
 import WeatherApi from '../services/weatherApi';
 import { MailOutlined } from '@ant-design/icons';
 
+type WeatherDetailProps = {
+    city: string;
+    loading: boolean;
+    onFinishLoading: (b: boolean) => void;
+    isImperial: boolean;
+};
+
 const { Title } = Typography;
 
 export default function WeatherDetail({
@@ -23,12 +30,7 @@ export default function WeatherDetail({
     loading,
     onFinishLoading,
     isImperial,
-}: {
-    city: string;
-    loading: boolean;
-    onFinishLoading: (b: boolean) => void;
-    isImperial: boolean;
-}) {
+}: WeatherDetailProps) {
     const [weather, setWeather] = useState<WheatherModel>();
     const [messageApi, contextHolder] = message.useMessage();
 
@@ -67,7 +69,7 @@ export default function WeatherDetail({
     }
 
     return (
-        <div className="py-4">
+        <div data-testid='weatherDetailComponent' className="py-4">
             {contextHolder}
             {loading && skeleton}
             {loading || (
