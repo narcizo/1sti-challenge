@@ -55,7 +55,8 @@ export default function WeatherDetail({
             setWeather(weatherResponse);
         } catch (err: any) {
             if (err.response?.status === 400) {
-                console.log('Cidade não encontrada: ', city);
+                //TODO exibir card de cidade não encontrada
+                console.log('Cidade não encontrada: ', city); 
             }
             if (err?.code == 'ERR_NETWORK') {
                 messageApi.open({

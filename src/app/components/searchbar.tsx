@@ -11,6 +11,7 @@ export default function SearchBar({
 }: SearchBarProps) {
     const placeholderText = 'Insira aqui o nome da sua cidade';
 
+    // TODO mudar para input com select com as opcoes disponiveis
     return (
         <>
             <Input
