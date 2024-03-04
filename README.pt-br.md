@@ -44,6 +44,11 @@ Aqui estão as capturas de tela de "expectativa vs realidade" lado a lado, a da 
     h3 {
         text-align: center;
     }
+
+    img {
+        width: 100%;
+        height: auto;
+    }
 </style>
 
 <h3>Visualização Desktop</h3>

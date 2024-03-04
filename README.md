@@ -44,6 +44,11 @@ Here are the "expectation vs reality" screenshots side by side, 1STI's on the le
     h3 {
         text-align: center;
     }
+
+    img {
+        width: 100%;
+        height: auto;
+    }
 </style>
 
 <h3>Desktop View</h3>
