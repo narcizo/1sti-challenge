@@ -29,48 +29,66 @@ This new API doesn't have data like forecast or min/max weather for the day, hen
 
 Here are the "expectation vs reality" screenshots side by side, 1STI's on the left and mine on the right.
 
-<h3 style="text-align: center;">Desktop View</h3>
-<table style="width: 100%; table-layout:fixed;">
+<style>
+    table {
+        width: 100%; 
+        table-layout: fixed;
+    }
+
+    td {
+        width:50%;
+        min-width: 50%;
+        max-width: 50%;
+    }
+
+    h3 {
+        text-align: center;
+    }
+</style>
+
+<h3>Desktop View</h3>
+
+<table>
 <tr>
 <th> 1STI </th>
 <th> Mine </th>
 </tr>
 <tr>
-<td style="width:50%;">
+<td>
 
-![alt tag](https://s3-us-west-1.amazonaws.com/1sti/desafio-desktop1.png)
-![alt tag](https://s3-us-west-1.amazonaws.com/1sti/desafio-desktop2.png)
+<img src="https://s3-us-west-1.amazonaws.com/1sti/desafio-desktop1.png">
+<img src="https://s3-us-west-1.amazonaws.com/1sti/desafio-desktop2.png">
 
 </td>
-<td style="width:50%;">
+<td>
 
-![Desktop view](/imgs/desktop-view.png "Desktop view")
-![Desktop view day time](/imgs/desktop-view2.png "Desktop view day time")
-![Desktop view night time](/imgs/desktop-view3.png "Desktop view night time")
+<img src="/imgs/desktop-view.png">
+<img src="/imgs/desktop-view2.png">
+<img src="/imgs/desktop-view3.png">
 
 </td>
 </tr>
 </table>
 
-<h3 style="text-align: center;">Mobile View</h3>
-<table style="width: 100%; table-layout:fixed;">
+<h3>Mobile View</h3>
+
+<table>
 <tr>
 <th> 1STI </th>
 <th> Mine </th>
 </tr>
 <tr>
-<td style="width:50%;">
+<td>
 
-![alt tag](https://s3-us-west-1.amazonaws.com/1sti/desafio-mobile1.png)
-
-![alt tag](https://s3-us-west-1.amazonaws.com/1sti/desafio-mobile2.png)
+<img src="https://s3-us-west-1.amazonaws.com/1sti/desafio-mobile1.png">
+<img src="https://s3-us-west-1.amazonaws.com/1sti/desafio-mobile2.png">
 
 </td>
-<td style="width:50%;">
+<td>
 
-![Mobile view](/imgs/mobile-view.png "Mobile view")
-![Mobile view day time](/imgs/mobile-view2.png "Mobile view day time")
-![Mobile view night time](/imgs/mobile-view3.png "Mobile view night time")
+<img src="/imgs/mobile-view.png">
+<img src="/imgs/mobile-view2.png">
+<img src="/imgs/mobile-view3.png">
 
 </td>
 </tr>

@@ -29,48 +29,64 @@ Esta nova API não tem dados como previsão ou temperatura mínima/máxima para 
 
 Aqui estão as capturas de tela de "expectativa vs realidade" lado a lado, a da 1STI à esquerda e a minha à direita.
 
-<h3 style="text-align: center;">Visualização Desktop</h3>
-<table style="width: 100%; table-layout:fixed;">
+<style>
+    table {
+        width: 100%; 
+        table-layout: fixed;
+    }
+
+    td {
+        width:50%;
+        min-width: 50%;
+        max-width: 50%;
+    }
+
+    h3 {
+        text-align: center;
+    }
+</style>
+
+<h3>Visualização Desktop</h3>
+<table>
 <tr>
 <th> 1STI </th>
 <th> Minha </th>
 </tr>
 <tr>
-<td style="width:50%;">
+<td>
 
-![alt tag](https://s3-us-west-1.amazonaws.com/1sti/desafio-desktop1.png)
-![alt tag](https://s3-us-west-1.amazonaws.com/1sti/desafio-desktop2.png)
+<img src="https://s3-us-west-1.amazonaws.com/1sti/desafio-desktop1.png">
+<img src="https://s3-us-west-1.amazonaws.com/1sti/desafio-desktop2.png">
 
 </td>
-<td style="width:50%;">
+<td>
 
-![Visualização Desktop](/imgs/desktop-view.png "Visualização Desktop")
-![Visualização Desktop durante o dia](/imgs/desktop-view2.png "Visualização Desktop durante o dia")
-![Visualização Desktop durante a noite](/imgs/desktop-view3.png "Visualização Desktop durante a noite")
+<img src="/imgs/desktop-view.png">
+<img src="/imgs/desktop-view2.png">
+<img src="/imgs/desktop-view3.png">
 
 </td>
 </tr>
 </table>
 
-<h3 style="text-align: center;">Visualização Mobile</h3>
-<table style="width: 100%; table-layout:fixed;">
+<h3>Visualização Mobile</h3>
+<table>
 <tr>
 <th> 1STI </th>
 <th> Minha </th>
 </tr>
 <tr>
-<td style="width:50%;">
+<td>
 
-![alt tag](https://s3-us-west-1.amazonaws.com/1sti/desafio-mobile1.png)
-
-![alt tag](https://s3-us-west-1.amazonaws.com/1sti/desafio-mobile2.png)
+<img src="https://s3-us-west-1.amazonaws.com/1sti/desafio-mobile1.png">
+<img src="https://s3-us-west-1.amazonaws.com/1sti/desafio-mobile2.png">
 
 </td>
-<td style="width:50%;">
+<td>
 
-![Visualização Mobile](/imgs/mobile-view.png "Visualização Mobile")
-![Visualização Mobile durante o dia](/imgs/mobile-view2.png "Visualização Mobile durante o dia")
-![Visualização Mobile durante a noite](/imgs/mobile-view3.png "Visualização Mobile durante a noite")
+<img src="/imgs/mobile-view.png">
+<img src="/imgs/mobile-view2.png">
+<img src="/imgs/mobile-view3.png">
 
 </td>
 </tr>
