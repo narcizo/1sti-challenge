@@ -29,52 +29,21 @@ Esta nova API não tem dados como previsão ou temperatura mínima/máxima para 
 
 Aqui estão as capturas de tela de "expectativa vs realidade" lado a lado, a da 1STI à esquerda e a minha à direita.
 
-<h3 style="text-align: center;">Visualização Desktop</h3>
-<table style="width: 100%; table-layout:fixed;">
-<tr>
-<th> 1STI </th>
-<th> Minha </th>
-</tr>
-<tr>
-<td style="max-width:50%;width:50%;">
+<h3 style="text-align: center">Visualização Desktop</h3>
 
-![alt tag](https://s3-us-west-1.amazonaws.com/1sti/desafio-desktop1.png)
-![alt tag](https://s3-us-west-1.amazonaws.com/1sti/desafio-desktop2.png)
+| 1STI                   | Minha                   |
+| ---------------------- | ---------------------- |
+| ![](https://s3-us-west-1.amazonaws.com/1sti/desafio-desktop1.png) | ![](/imgs/desktop-view.png) |
+| ![cat](https://s3-us-west-1.amazonaws.com/1sti/desafio-desktop2.png) | ![dog](/imgs/desktop-view2.png) |
+| ![cat](https://s3-us-west-1.amazonaws.com/1sti/desafio-desktop2.png) | ![dog](/imgs/desktop-view3.png) |
 
-</td>
-<td style="max-width:50%;width:50%;">
+<h3 style="text-align: center">Visualização Mobile</h3>
 
-![Visualização Desktop](/imgs/desktop-view.png "Visualização Desktop")
-![Visualização Desktop durante o dia](/imgs/desktop-view2.png "Visualização Desktop durante o dia")
-![Visualização Desktop durante a noite](/imgs/desktop-view3.png "Visualização Desktop durante a noite")
-
-</td>
-</tr>
-</table>
-
-<h3 style="text-align: center;">Visualização Mobile</h3>
-<table style="width: 100%; table-layout:fixed;">
-<tr>
-<th> 1STI </th>
-<th> Minha </th>
-</tr>
-<tr>
-<td style="max-width:50%;width:50%;">
-
-![alt tag](https://s3-us-west-1.amazonaws.com/1sti/desafio-mobile1.png)
-
-![alt tag](https://s3-us-west-1.amazonaws.com/1sti/desafio-mobile2.png)
-
-</td>
-<td style="max-width:50%;width:50%;">
-
-![Visualização Mobile](/imgs/mobile-view.png "Visualização Mobile")
-![Visualização Mobile durante o dia](/imgs/mobile-view2.png "Visualização Mobile durante o dia")
-![Visualização Mobile durante a noite](/imgs/mobile-view3.png "Visualização Mobile durante a noite")
-
-</td>
-</tr>
-</table>
+| 1STI                   | Minha                   |
+| ---------------------- | ---------------------- |
+| ![](https://s3-us-west-1.amazonaws.com/1sti/desafio-mobile1.png) | ![](/imgs/mobile-view.png) |
+| ![cat](https://s3-us-west-1.amazonaws.com/1sti/desafio-mobile2.png) | ![dog](/imgs/mobile-view2.png) |
+| ![cat](https://s3-us-west-1.amazonaws.com/1sti/desafio-mobile2.png) | ![dog](/imgs/mobile-view3.png) |
 
 ## Como executar localmente
 Para executar localmente, baixe o projeto e use estes comandos no seu terminal:

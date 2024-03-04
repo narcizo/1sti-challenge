@@ -29,52 +29,21 @@ This new API doesn't have data like forecast or min/max weather for the day, hen
 
 Here are the "expectation vs reality" screenshots side by side, 1STI's on the left and mine on the right.
 
-<h3 style="text-align: center;">Desktop View</h3>
-<table style="width: 100%; table-layout:fixed;">
-<tr>
-<th> 1STI </th>
-<th> Mine </th>
-</tr>
-<tr>
-<td style="max-width:50%;width:50%;">
+<h3 style="text-align: center">Desktop view</h3>
 
-![alt tag](https://s3-us-west-1.amazonaws.com/1sti/desafio-desktop1.png)
-![alt tag](https://s3-us-west-1.amazonaws.com/1sti/desafio-desktop2.png)
+| 1STI                   | Mine                   |
+| ---------------------- | ---------------------- |
+| ![](https://s3-us-west-1.amazonaws.com/1sti/desafio-desktop1.png) | ![](/imgs/desktop-view.png) |
+| ![cat](https://s3-us-west-1.amazonaws.com/1sti/desafio-desktop2.png) | ![dog](/imgs/desktop-view2.png) |
+| ![cat](https://s3-us-west-1.amazonaws.com/1sti/desafio-desktop2.png) | ![dog](/imgs/desktop-view3.png) |
 
-</td>
-<td style="max-width:50%;width:50%;">
+<h3 style="text-align: center">Mobile View</h3>
 
-![Desktop view](/imgs/desktop-view.png "Desktop view")
-![Desktop view day time](/imgs/desktop-view2.png "Desktop view day time")
-![Desktop view night time](/imgs/desktop-view3.png "Desktop view night time")
-
-</td>
-</tr>
-</table>
-
-<h3 style="text-align: center;">Mobile View</h3>
-<table style="width: 100%; table-layout:fixed;">
-<tr>
-<th> 1STI </th>
-<th> Mine </th>
-</tr>
-<tr>
-<td style="max-width:50%;width:50%;">
-
-![alt tag](https://s3-us-west-1.amazonaws.com/1sti/desafio-mobile1.png)
-
-![alt tag](https://s3-us-west-1.amazonaws.com/1sti/desafio-mobile2.png)
-
-</td>
-<td style="max-width:50%;width:50%;">
-
-![Mobile view](/imgs/mobile-view.png "Mobile view")
-![Mobile view day time](/imgs/mobile-view2.png "Mobile view day time")
-![Mobile view night time](/imgs/mobile-view3.png "Mobile view night time")
-
-</td>
-</tr>
-</table>
+| 1STI                   | Mine                   |
+| ---------------------- | ---------------------- |
+| ![](https://s3-us-west-1.amazonaws.com/1sti/desafio-mobile1.png) | ![](/imgs/mobile-view.png) |
+| ![cat](https://s3-us-west-1.amazonaws.com/1sti/desafio-mobile2.png) | ![dog](/imgs/mobile-view2.png) |
+| ![cat](https://s3-us-west-1.amazonaws.com/1sti/desafio-mobile2.png) | ![dog](/imgs/mobile-view3.png) |
 
 ## How to run locally
 To run locally, download the project and use these commands on your terminal:
