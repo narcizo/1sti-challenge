@@ -29,73 +29,21 @@ Esta nova API não tem dados como previsão ou temperatura mínima/máxima para 
 
 Aqui estão as capturas de tela de "expectativa vs realidade" lado a lado, a da 1STI à esquerda e a minha à direita.
 
-<style>
-    table {
-        width: 100%; 
-        table-layout: fixed;
-    }
+<h3 style="text-align: center">Visualização Desktop</h3>
 
-    td {
-        width:50%;
-        min-width: 50%;
-        max-width: 50%;
-    }
+| 1STI                   | Minha                   |
+| ---------------------- | ---------------------- |
+| ![](https://s3-us-west-1.amazonaws.com/1sti/desafio-desktop1.png) | ![](/imgs/desktop-view.png) |
+| ![cat](https://s3-us-west-1.amazonaws.com/1sti/desafio-desktop2.png) | ![dog](/imgs/desktop-view2.png) |
+| ![cat](https://s3-us-west-1.amazonaws.com/1sti/desafio-desktop2.png) | ![dog](/imgs/desktop-view3.png) |
 
-    h3 {
-        text-align: center;
-    }
+<h3 style="text-align: center">Visualização Mobile</h3>
 
-    img {
-        width: 500px;
-        height: auto;
-    }
-</style>
-
-<h3>Visualização Desktop</h3>
-<table>
-<tr>
-<th> 1STI </th>
-<th> Minha </th>
-</tr>
-<tr>
-<td>
-
-<img src="https://s3-us-west-1.amazonaws.com/1sti/desafio-desktop1.png">
-<img src="https://s3-us-west-1.amazonaws.com/1sti/desafio-desktop2.png">
-
-</td>
-<td>
-
-<img src="/imgs/desktop-view.png">
-<img src="/imgs/desktop-view2.png">
-<img src="/imgs/desktop-view3.png">
-
-</td>
-</tr>
-</table>
-
-<h3>Visualização Mobile</h3>
-<table>
-<tr>
-<th> 1STI </th>
-<th> Minha </th>
-</tr>
-<tr>
-<td>
-
-<img src="https://s3-us-west-1.amazonaws.com/1sti/desafio-mobile1.png">
-<img src="https://s3-us-west-1.amazonaws.com/1sti/desafio-mobile2.png">
-
-</td>
-<td>
-
-<img src="/imgs/mobile-view.png">
-<img src="/imgs/mobile-view2.png">
-<img src="/imgs/mobile-view3.png">
-
-</td>
-</tr>
-</table>
+| 1STI                   | Minha                   |
+| ---------------------- | ---------------------- |
+| ![](https://s3-us-west-1.amazonaws.com/1sti/desafio-mobile1.png) | ![](/imgs/mobile-view.png) |
+| ![cat](https://s3-us-west-1.amazonaws.com/1sti/desafio-mobile2.png) | ![dog](/imgs/mobile-view2.png) |
+| ![cat](https://s3-us-west-1.amazonaws.com/1sti/desafio-mobile2.png) | ![dog](/imgs/mobile-view3.png) |
 
 ## Como executar localmente
 Para executar localmente, baixe o projeto e use estes comandos no seu terminal:
