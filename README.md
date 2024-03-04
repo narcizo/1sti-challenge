@@ -1,36 +1,98 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 1STI Frontend Challenge
 
-## Getting Started
+[![en](https://img.shields.io/badge/lang-en-red.svg)](https://github.com/narcizo/1sti-challenge/blob/master/README.md)
+[![pt-br](https://img.shields.io/badge/lang-pt--br-green.svg)](https://github.com/narcizo/1sti-challenge/blob/master/README.pt-br.md)
 
-First, run the development server:
+This challenge was proposed on this [1STI Github repo](https://github.com/1STi/desafio-frontend/). The goal of this challenge is to build a simple frontend weather app. The weather data is obtained by consuming [Weather API](https://www.weatherapi.com/)'s api. 
+
+The project can be visited at this URL: [https://1sti-challenge.vercel.app/](https://1sti-challenge.vercel.app/)
+
+## Tech stack
+* **Typescript**
+* **React** (Next.js)
+* **Axios**
+* **Tailwind**
+* **Ant Design**
+* **Vercel** (for deployment)
+
+## Topics covered
+* **API consumption**
+* **Componentization**
+* **Responsiveness**
+* **Unit/Component testing**
+* **CI/CD** (through Vercel and Github)
+
+## Expectation vs Reality
+1STI provided some screenshots for the responsive layout they were looking for.
+I tried to come as close as possible to the mais source, but since the API they suggested is deprecated, I had to improvise and use another API to fetch the weather data.
+This new API doesn't have data like forecast or min/max weather for the day, hence the minor difference in the displayed data.
+
+Here are the "expectation vs reality" screenshots side by side, 1STI's on the left and mine on the right.
+
+<h3 style="text-align: center;">Desktop View</h3>
+<table style="width: 100%; table-layout:fixed;">
+<tr>
+<th> 1STI </th>
+<th> Mine </th>
+</tr>
+<tr>
+<td style="max-width:50%;width:50%;">
+
+![alt tag](https://s3-us-west-1.amazonaws.com/1sti/desafio-desktop1.png)
+![alt tag](https://s3-us-west-1.amazonaws.com/1sti/desafio-desktop2.png)
+
+</td>
+<td style="max-width:50%;width:50%;">
+
+![Desktop view](/imgs/desktop-view.png "Desktop view")
+![Desktop view day time](/imgs/desktop-view2.png "Desktop view day time")
+![Desktop view night time](/imgs/desktop-view3.png "Desktop view night time")
+
+</td>
+</tr>
+</table>
+
+<h3 style="text-align: center;">Mobile View</h3>
+<table style="width: 100%; table-layout:fixed;">
+<tr>
+<th> 1STI </th>
+<th> Mine </th>
+</tr>
+<tr>
+<td style="max-width:50%;width:50%;">
+
+![alt tag](https://s3-us-west-1.amazonaws.com/1sti/desafio-mobile1.png)
+
+![alt tag](https://s3-us-west-1.amazonaws.com/1sti/desafio-mobile2.png)
+
+</td>
+<td style="max-width:50%;width:50%;">
+
+![Mobile view](/imgs/mobile-view.png "Mobile view")
+![Mobile view day time](/imgs/mobile-view2.png "Mobile view day time")
+![Mobile view night time](/imgs/mobile-view3.png "Mobile view night time")
+
+</td>
+</tr>
+</table>
+
+## How to run locally
+To run locally, download the project and use these commands on your terminal:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm test
+```
+### Environment Variables - Important!
+The API key for the weather app was omitted from this repo for security reasons. To run properly you must use your own API key from Wheater Api.
+
+Create a `.env` in the root of the repo and fill these variables
+```
+NEXT_PUBLIC_WEATHER_API_BASE_URL=http://api.weatherapi.com/v1
+NEXT_PUBLIC_WEATHER_API_KEY=<YOUR_API_KEY>
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+--- 
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
