@@ -36,13 +36,13 @@ Here are the "expectation vs reality" screenshots side by side, 1STI's on the le
 <th> Mine </th>
 </tr>
 <tr>
-<td style="max-width:50%;width:50%;">
+<td style="max-width:50%;min-width:50%;">
 
 ![alt tag](https://s3-us-west-1.amazonaws.com/1sti/desafio-desktop1.png)
 ![alt tag](https://s3-us-west-1.amazonaws.com/1sti/desafio-desktop2.png)
 
 </td>
-<td style="max-width:50%;width:50%;">
+<td style="max-width:50%;min-width:50%;">
 
 ![Desktop view](/imgs/desktop-view.png "Desktop view")
 ![Desktop view day time](/imgs/desktop-view2.png "Desktop view day time")
@@ -59,14 +59,14 @@ Here are the "expectation vs reality" screenshots side by side, 1STI's on the le
 <th> Mine </th>
 </tr>
 <tr>
-<td style="max-width:50%;width:50%;">
+<td style="max-width:50%;min-width:50%;">
 
 ![alt tag](https://s3-us-west-1.amazonaws.com/1sti/desafio-mobile1.png)
 
 ![alt tag](https://s3-us-west-1.amazonaws.com/1sti/desafio-mobile2.png)
 
 </td>
-<td style="max-width:50%;width:50%;">
+<td style="max-width:50%;min-width:50%;">
 
 ![Mobile view](/imgs/mobile-view.png "Mobile view")
 ![Mobile view day time](/imgs/mobile-view2.png "Mobile view day time")

@@ -36,13 +36,13 @@ Aqui estão as capturas de tela de "expectativa vs realidade" lado a lado, a da 
 <th> Minha </th>
 </tr>
 <tr>
-<td style="max-width:50%;width:50%;">
+<td style="max-width:50%;min-width:50%;">
 
 ![alt tag](https://s3-us-west-1.amazonaws.com/1sti/desafio-desktop1.png)
 ![alt tag](https://s3-us-west-1.amazonaws.com/1sti/desafio-desktop2.png)
 
 </td>
-<td style="max-width:50%;width:50%;">
+<td style="max-width:50%;min-width:50%;">
 
 ![Visualização Desktop](/imgs/desktop-view.png "Visualização Desktop")
 ![Visualização Desktop durante o dia](/imgs/desktop-view2.png "Visualização Desktop durante o dia")
@@ -59,14 +59,14 @@ Aqui estão as capturas de tela de "expectativa vs realidade" lado a lado, a da 
 <th> Minha </th>
 </tr>
 <tr>
-<td style="max-width:50%;width:50%;">
+<td style="max-width:50%;min-width:50%;">
 
 ![alt tag](https://s3-us-west-1.amazonaws.com/1sti/desafio-mobile1.png)
 
 ![alt tag](https://s3-us-west-1.amazonaws.com/1sti/desafio-mobile2.png)
 
 </td>
-<td style="max-width:50%;width:50%;">
+<td style="max-width:50%;min-width:50%;">
 
 ![Visualização Mobile](/imgs/mobile-view.png "Visualização Mobile")
 ![Visualização Mobile durante o dia](/imgs/mobile-view2.png "Visualização Mobile durante o dia")
