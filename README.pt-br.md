@@ -46,7 +46,7 @@ Aqui estão as capturas de tela de "expectativa vs realidade" lado a lado, a da 
     }
 
     img {
-        width: 100%;
+        width: 500px;
         height: auto;
     }
 </style>

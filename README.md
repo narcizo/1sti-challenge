@@ -46,7 +46,7 @@ Here are the "expectation vs reality" screenshots side by side, 1STI's on the le
     }
 
     img {
-        width: 100%;
+        width: 500px;
         height: auto;
     }
 </style>
