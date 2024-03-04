@@ -29,75 +29,21 @@ This new API doesn't have data like forecast or min/max weather for the day, hen
 
 Here are the "expectation vs reality" screenshots side by side, 1STI's on the left and mine on the right.
 
-<style>
-    table {
-        width: 100%; 
-        table-layout: fixed;
-    }
+<h3 style="text-align: center">Desktop view</h3>
 
-    td {
-        width:50%;
-        min-width: 50%;
-        max-width: 50%;
-    }
+| 1STI                   | Mine                   |
+| ---------------------- | ---------------------- |
+| ![](https://s3-us-west-1.amazonaws.com/1sti/desafio-desktop1.png) | ![](/imgs/desktop-view.png) |
+| ![cat](https://s3-us-west-1.amazonaws.com/1sti/desafio-desktop2.png) | ![dog](/imgs/desktop-view2.png) |
+| ![cat](https://s3-us-west-1.amazonaws.com/1sti/desafio-desktop2.png) | ![dog](/imgs/desktop-view3.png) |
 
-    h3 {
-        text-align: center;
-    }
+<h3 style="text-align: center">Mobile View</h3>
 
-    img {
-        width: 500px;
-        height: auto;
-    }
-</style>
-
-<h3>Desktop View</h3>
-
-<table>
-<tr>
-<th> 1STI </th>
-<th> Mine </th>
-</tr>
-<tr>
-<td>
-
-<img src="https://s3-us-west-1.amazonaws.com/1sti/desafio-desktop1.png">
-<img src="https://s3-us-west-1.amazonaws.com/1sti/desafio-desktop2.png">
-
-</td>
-<td>
-
-<img src="/imgs/desktop-view.png">
-<img src="/imgs/desktop-view2.png">
-<img src="/imgs/desktop-view3.png">
-
-</td>
-</tr>
-</table>
-
-<h3>Mobile View</h3>
-
-<table>
-<tr>
-<th> 1STI </th>
-<th> Mine </th>
-</tr>
-<tr>
-<td>
-
-<img src="https://s3-us-west-1.amazonaws.com/1sti/desafio-mobile1.png">
-<img src="https://s3-us-west-1.amazonaws.com/1sti/desafio-mobile2.png">
-
-</td>
-<td>
-
-<img src="/imgs/mobile-view.png">
-<img src="/imgs/mobile-view2.png">
-<img src="/imgs/mobile-view3.png">
-
-</td>
-</tr>
-</table>
+| 1STI                   | Mine                   |
+| ---------------------- | ---------------------- |
+| ![](https://s3-us-west-1.amazonaws.com/1sti/desafio-mobile1.png) | ![](/imgs/mobile-view.png) |
+| ![cat](https://s3-us-west-1.amazonaws.com/1sti/desafio-mobile2.png) | ![dog](/imgs/mobile-view2.png) |
+| ![cat](https://s3-us-west-1.amazonaws.com/1sti/desafio-mobile2.png) | ![dog](/imgs/mobile-view3.png) |
 
 ## How to run locally
 To run locally, download the project and use these commands on your terminal:
