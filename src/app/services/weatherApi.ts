@@ -1,24 +1,28 @@
 import axios from 'axios';
-import { WheatherModel } from '../models/weatherModel';
+import { IWheatherModel, ILocation } from '../models/weatherModel';
 
 export default class WeatherApi {
     private apiService = axios.create({
         baseURL: process.env.NEXT_PUBLIC_WEATHER_API_BASE_URL,
     });
 
-    public async getWeather(city: string): Promise<WheatherModel> {
+    public async getWeather(city: string): Promise<IWheatherModel> {
         try {
             const response = await this.apiService.get(
                 `/current.json?key=${process.env.NEXT_PUBLIC_WEATHER_API_KEY}&q=${city}&lang="pt"`,
             );
-
+            
             const data = response.data;
-            const weather = new WheatherModel(
-                data.location.name,
-                data.location.country,
-                data.location.region,
-                data.location.lat,
-                data.location.lon,
+            const location = {
+                id: data.location.id,
+                name: data.location.name,
+                country: data.location.country,
+                region: data.location.region,
+                lat: data.location.lat,
+                lon: data.location.lon,
+            };
+            const weather = new IWheatherModel(
+                location,
                 data.current.temp_c,
                 data.current.temp_f,
                 data.current.humidity,
@@ -34,6 +38,35 @@ export default class WeatherApi {
         } catch (err) {
             console.error('ERROR@WeatherApi.getWeather: ', err);
             throw err;
+        }
+    }
+
+    public async getLocations(query: string): Promise<ILocation[]> {
+        if (query.length < 3) return [];
+
+        try {
+            const response = await this.apiService.get(
+                `/search.json?key=${process.env.NEXT_PUBLIC_WEATHER_API_KEY}&q=${query}&lang="pt"`,
+            );
+
+            const data = response.data;
+
+            console.log('location: ', data);
+            const locations = data.map((location: any) => {
+                return new ILocation(
+                    location.id,
+                    location.name,
+                    location.country,
+                    location.region,
+                    location.lat,
+                    location.lon,
+                );
+            });
+
+            return locations;
+        } catch (err) {
+            console.error('ERROR@WeatherApi.getLocationList: ', err);
+            return [];
         }
     }
 }

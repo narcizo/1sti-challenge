@@ -19,9 +19,9 @@ export default function Home() {
     const [searchQuery, setSearchQuery] = useState('');
     const [useImperial, setUseImperial] = useState(false);
 
-    function handleSearch(text: string | undefined) {
-        if (text == undefined || text.length < 3) return;
-        setSearchQuery(text);
+    function handleSearch(cityId: string | undefined) {
+        if (cityId == undefined || cityId.length < 3) return;
+        setSearchQuery(cityId);
         setLoading(true);
     }
 
@@ -40,7 +40,7 @@ export default function Home() {
                 className="min-h-screen overflow-auto bg-gradient-to-r from-background-1 to-background-4"
             >
                 <Col xs={22} md={18}>
-                    <Title className="flex p-3 justify-center text-white pb-0">
+                    <Title className="flex p-3 justify-center pb-0 fill-white">
                         Previsão do tempo
                     </Title>
                     <div className="flex items-center justify-center">
@@ -50,7 +50,7 @@ export default function Home() {
                         />
                     </div>
                     <div className="flex items-center justify-center md:items-start md:justify-start">
-                        <div className="w-48 flex justify-center p-3 mt-3 mb-3 bg-background-5 w-30 rounded-full">
+                        <div className="w-48 flex items-center justify-center p-3 mt-3 mb-3 bg-background-5 w-30 rounded-full">
                             <Switch
                                 value={useImperial}
                                 onChange={(checked) => setUseImperial(checked)}

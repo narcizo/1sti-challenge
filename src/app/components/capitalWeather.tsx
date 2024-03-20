@@ -14,7 +14,7 @@ import {
 const { Title } = Typography;
 
 import WeatherApi from '../services/weatherApi';
-import { WheatherModel } from '../models/weatherModel';
+import { IWheatherModel } from '../models/weatherModel';
 import { MoonOutlined, SunOutlined } from '@ant-design/icons';
 
 type CapitalWeatherProps = {
@@ -26,7 +26,7 @@ const weatherApi = new WeatherApi();
 export default function CapitalWeather({
     isImperial,
 }: CapitalWeatherProps) {
-    const [weatherData, setWeatherData] = useState<WheatherModel[]>(Array(0));
+    const [weatherData, setWeatherData] = useState<IWheatherModel[]>(Array(0));
     const [reload, setReload] = useState(false);
     const [messageApi, contextHolder] = message.useMessage();
 
@@ -81,17 +81,17 @@ export default function CapitalWeather({
             </>
         );
     }
-    const capitalsJsx = weatherData.map((weather: WheatherModel) => {
+    const capitalsJsx = weatherData.map((weather: IWheatherModel) => {
         if (!weather) return <></>;
         return (
-            <Col key={weather.lat} xs={24} sm={12} md={8} lg={8} xxl={6}>
+            <Col key={weather.location.lat} xs={24} sm={12} md={8} lg={8} xxl={6}>
                 <Card
                     hoverable
                     className={`m-1 bg-transparent border-amber-700 hover:${weather?.is_day ? 'bg-day-200' : 'bg-night-100'}`}
                 >
                     <div className="flex justify-between">
                         <Title className="pt-3" level={4}>
-                            {weather?.cityName}
+                            {weather?.location.name}
                         </Title>
                         {weather?.is_day ? (
                             <SunOutlined className="pl-2" />
