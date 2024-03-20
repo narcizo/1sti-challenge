@@ -84,7 +84,7 @@ export default function CapitalWeather({
     const capitalsJsx = weatherData.map((weather: IWheatherModel) => {
         if (!weather) return <></>;
         return (
-            <Col key={weather.location.lat} xs={24} sm={12} md={8} lg={8} xxl={6}>
+            <Col className="p-2" key={weather.location.lat} xs={24} sm={12} md={8} lg={8} xxl={6}>
                 <Card
                     hoverable
                     className={`m-1 bg-transparent border-amber-700 hover:${weather?.is_day ? 'bg-day-200' : 'bg-night-100'}`}
@@ -118,7 +118,7 @@ export default function CapitalWeather({
                     </Descriptions>
                     <Descriptions>
                         <Descriptions.Item label="Umidade">
-                            {weather?.humidity}
+                            {weather?.humidity}%
                         </Descriptions.Item>
                     </Descriptions>
                 </Card>
@@ -129,19 +129,19 @@ export default function CapitalWeather({
     return (
         <>
             {contextHolder}
-            <div data-testid='capitalsComponent' className="group flex items-center justify-between">
-                <Title level={2} className="p-3 m-0 text-slate-50">
+            <div data-testid='capitalsComponent' className="group flex justify-between items-center">
+                <Title level={2} className="pl-3 m-0 text-slate-50">
                     Capitais
                 </Title>
                 <Button
                     loading={reload}
                     onClick={() => setReload(true)}
-                    className="bg-background-5 border-none rounded-full text-lg	text-white mr-1 pb-9 group-3hover:bg-black"
+                    className="bg-background-5 border-none rounded-full text-lg	text-white mr-3 mb-3 pb-8 group-3hover:bg-black"
                 >
                     Recarregar
                 </Button>
             </div>
-            <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
+            <Row>
                 {emptyWeather || capitalsJsx}
             </Row>
         </>

@@ -12,7 +12,12 @@ export default class WeatherApi {
                 `/current.json?key=${process.env.NEXT_PUBLIC_WEATHER_API_KEY}&q=${city}&lang="pt"`,
             );
             
+            if (!response || !response.data || typeof response.data !== 'object') {
+                throw new Error('Invalid response');
+            }
+
             const data = response.data;
+            
             const location = {
                 id: data.location.id,
                 name: data.location.name,
@@ -48,6 +53,10 @@ export default class WeatherApi {
             const response = await this.apiService.get(
                 `/search.json?key=${process.env.NEXT_PUBLIC_WEATHER_API_KEY}&q=${query}&lang="pt"`,
             );
+
+            if (!response || !response.data || typeof response.data !== 'object') {
+                throw new Error('Invalid API response');
+            }
 
             const data = response.data;
 

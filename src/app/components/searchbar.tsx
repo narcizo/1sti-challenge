@@ -41,42 +41,9 @@ export default function SearchBar({
                     onChange(newValue?.label);
                 }
             }}
-            style={{ width: '90%' }}
+            style={{ width: '100%' }}
         />
-        <p>
-
-            {/* {value.map((v) => v.label).join(', ')} */}
-        </p>
     </>
-    );
-    /////////////////////////////////////////////////////////////////////
-
-    return (
-        <>
-            <Input
-                data-testid="searchBarComponent"
-                value={text}
-                placeholder={placeholderText}
-                allowClear
-                onChange={(e) => onChange(e.target.value)}
-                className="w-9/12 md:w-full p-3 c-white"
-            />
-            <Select
-                showSearch
-                style={{ width: 200 }}
-                placeholder={placeholderText}
-                optionFilterProp="children"
-                // filterOption={(input, option) => (option?.label ?? '').includes(input)}
-                // filterSort={(optionA, optionB) =>
-                // (optionA?.label ?? '').toLowerCase().localeCompare((optionB?.label ?? '').toLowerCase())
-                // }
-                onChange={(e) => onChange(e.target.value)}
-                options={locations.map((location) => {
-                    return { value: location.id, label: `${location.name} - ${location.country}` };
-                })
-                }
-            />
-        </>
     );
 }
 
@@ -87,7 +54,11 @@ export interface DebounceSelectProps<ILocation>
     debounceTimeout?: number;
 }
 
-function DebounceSelect<ILocation extends {value: string | number, label: string}>({ fetchOptions, debounceTimeout = 400, ...props }: DebounceSelectProps<ILocation>) {
+function DebounceSelect<ILocation extends 
+    {
+        value: string | number, 
+        label: string
+    }>({ fetchOptions, debounceTimeout = 400, ...props }: DebounceSelectProps<ILocation>) {
     const [fetching, setFetching] = useState(false);
     const [options, setOptions] = useState<ILocation[]>([]);
 
@@ -112,7 +83,13 @@ function DebounceSelect<ILocation extends {value: string | number, label: string
         onSearch={debounceFetcher}
         notFoundContent={fetching ? <Spin size="small" /> : null}
         {...props}
-        options={options && options.map((location: ILocation) => ({ value: location.id, label: `${location.name} - ${location.country}` }))}
+        options={options 
+            && options.map((location: ILocation) => (
+                { 
+                    value: location.id, 
+                    label: `${location.name} - ${location.country}` 
+                }
+            ))}
         />
     );
 }

@@ -70,7 +70,7 @@ export default function WeatherDetail({
 
 
     return (
-        <div data-testid='weatherDetailComponent' className="py-4">
+        <div data-testid='weatherDetailComponent' className="pb-4">
             {contextHolder}
             {loading && 
                 <Card 
