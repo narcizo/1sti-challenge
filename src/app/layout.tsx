@@ -1,6 +1,9 @@
 export const metadata = {
     title: 'Weather App',
     description: '1STi Challenge',
+    icons: {
+        icon: '/icon.ico',
+    }
 };
 
 export default function RootLayout({
