@@ -1,9 +1,8 @@
 'use client';
 
-import { useState, useCallback } from 'react';
+import { useState } from 'react';
 import { Typography, Switch, Col, Flex } from 'antd';
 import { CheckOutlined, CloseOutlined } from '@ant-design/icons';
-import debounce from 'lodash/debounce';
 
 import './globals.css';
 
@@ -16,21 +15,12 @@ const { Title } = Typography;
 export default function Home() {
     const [inputText, setInputText] = useState('');
     const [loading, setLoading] = useState(false);
-    const [searchQuery, setSearchQuery] = useState('');
     const [useImperial, setUseImperial] = useState(false);
-
-    function handleSearch(cityId: string | undefined) {
-        if (cityId == undefined || cityId.length < 3) return;
-        setSearchQuery(cityId);
-        setLoading(true);
-    }
-
-    const debouncedInput = useCallback(debounce(handleSearch, 300), []);
-
+    
     function handleInputText(text: string) {
         setInputText(text);
-
-        debouncedInput(text);
+        
+        setLoading(true);
     }
 
     return (
@@ -63,7 +53,7 @@ export default function Home() {
                         </div>
                     </div>
                     <WeatherDetail
-                        city={searchQuery}
+                        city={inputText}
                         loading={loading}
                         onFinishLoading={setLoading}
                         isImperial={useImperial}
