@@ -1,7 +1,7 @@
 export class IWheatherModel {
     location: ILocation;
     temp_c: number;
-    forecast?: IForecast[];
+    forecast: IForecast[];
     temp_f: number;
     humidity: number;
     is_day: boolean;

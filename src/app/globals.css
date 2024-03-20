@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.custom-card .ant-card-head-title {
+    border-bottom: 1px solid black;
+    /* border: none; */
+}
+
+.custom-card .ant-card-head {
+    padding: 10px 20px;
+    border: none;
+}
+
+.custom-card .ant-card-body {
+    padding-top: 0;
+}

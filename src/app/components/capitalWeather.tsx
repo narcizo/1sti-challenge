@@ -9,6 +9,7 @@ import {
     Descriptions,
     Button,
     message,
+    Image
 } from 'antd';
 
 const { Title } = Typography;
@@ -84,43 +85,84 @@ export default function CapitalWeather({
     const capitalsJsx = weatherData.map((weather: IWheatherModel) => {
         if (!weather) return <></>;
         return (
-            <Col className="p-2" key={weather.location.lat} xs={24} sm={12} md={8} lg={8} xxl={6}>
+            <Col className="p-2" key={weather.location.lat} xs={24} sm={12} md={12} lg={10} xxl={6}>
                 <Card
                     hoverable
-                    className={`m-1 bg-transparent border-amber-700 hover:${weather?.is_day ? 'bg-day-200' : 'bg-night-100'}`}
+                    title={`${weather.location.name} - ${weather.location.country}`}
+                    className={`m-1 bg-transparent border-amber-700 hover:${weather?.is_day ? 'bg-day-200' : 'bg-night-100'} custom-card`}
                 >
                     <div className="flex justify-between">
-                        <Title className="pt-3" level={4}>
-                            {weather?.location.name}
-                        </Title>
+                        {isImperial ? (
+                            <Title level={5}>{weather?.temp_f}ºF</Title>
+                        ) : (
+                            <Title level={5}>{weather?.temp_c}ºC</Title>
+                        )}
                         {weather?.is_day ? (
                             <SunOutlined className="pl-2" />
                         ) : (
                             <MoonOutlined className="pl-2" />
                         )}
                     </div>
-                    {isImperial ? (
-                        <Title level={5}>{weather?.temp_f}ºF</Title>
-                    ) : (
-                        <Title level={5}>{weather?.temp_c}ºC</Title>
-                    )}
+                    
 
-                    <Descriptions>
-                        {isImperial ? (
-                            <Descriptions.Item label="Sensação">
-                                {weather?.feelslike_f}ºF
-                            </Descriptions.Item>
-                        ) : (
-                            <Descriptions.Item label="Sensação">
-                                {weather?.feelslike_c}ºC
-                            </Descriptions.Item>
-                        )}
-                    </Descriptions>
-                    <Descriptions>
-                        <Descriptions.Item label="Umidade">
-                            {weather?.humidity}%
-                        </Descriptions.Item>
-                    </Descriptions>
+                    <div className="flex">
+                        <div>
+                            <Descriptions>
+                                {isImperial ? (
+                                    <Descriptions.Item label="Mínima">
+                                        {weather?.forecast[0].minTemp_f}ºF
+                                    </Descriptions.Item>
+                                ) : (
+                                    <Descriptions.Item label="Mínima">
+                                        {weather?.forecast[0].minTemp_c}ºC
+                                    </Descriptions.Item>
+                                )}
+                            </Descriptions>
+                            <Descriptions>
+                                {isImperial ? (
+                                    <Descriptions.Item label="Máxima">
+                                        {weather?.forecast[0].maxTemp_f}ºF
+                                    </Descriptions.Item>
+                                ) : (
+                                    <Descriptions.Item label="Máxima">
+                                        {weather?.forecast[0].maxTemp_c}ºC
+                                    </Descriptions.Item>
+                                )}
+                            </Descriptions>
+                        </div>
+                        <div>
+                            <Descriptions>
+                                <Descriptions.Item label="Umidade">
+                                    {weather?.humidity}%
+                                </Descriptions.Item>
+                            </Descriptions>
+                            <Descriptions>
+                                <Descriptions.Item label="Chuva">
+                                    {weather?.forecast[0].chance_of_rain}%
+                                </Descriptions.Item>
+                            </Descriptions>
+                        </div>
+                    </div>
+
+                    <div className='flex justify-between'>
+                        {
+                            weather.forecast.map((day, index) => {
+                                return (
+                                    <div key={index} className='flex flex-col'>
+                                        <Image
+                                        src={day.condition.icon}
+                                        alt={day.condition.text}
+                                        className="w-20 h-20"
+                                        ></Image>
+                                        <Title level={5}>
+                                            {new Date(day.date).toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit', year: '2-digit' })}
+                                        </Title>
+                                    </div>
+                                    )
+                                })
+                        }
+                    </div>
+
                 </Card>
             </Col>
         );
@@ -141,7 +183,7 @@ export default function CapitalWeather({
                     Recarregar
                 </Button>
             </div>
-            <Row>
+            <Row className='flex justify-center'>
                 {emptyWeather || capitalsJsx}
             </Row>
         </>

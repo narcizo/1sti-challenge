@@ -73,10 +73,10 @@ export default function Home() {
 
                         <div className="flex gap-3">
                             <a href="https://www.github.com/narcizo" target="_blank" rel="noreferrer">
-                                <GithubOutlined className='text-2xl'/>
+                                <GithubOutlined className='text-2xl py-4'/>
                             </a>
                             <a href="https://www.linkedin.com/in/narcizog" target="_blank" rel="noreferrer">
-                                <LinkedinFilled className='text-2xl'/>
+                                <LinkedinFilled className='text-2xl py-4'/>
                             </a>
                             {/* <a href="https://narcizo.dev" target="_blank" rel="noreferrer">
                                 <CodeFilled className='text-2xl'/>
