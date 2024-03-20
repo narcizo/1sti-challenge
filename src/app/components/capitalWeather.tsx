@@ -12,7 +12,7 @@ import {
     Image
 } from 'antd';
 
-const { Title } = Typography;
+const { Text, Title } = Typography;
 
 import WeatherApi from '../services/weatherApi';
 import { IWheatherModel } from '../models/weatherModel';
@@ -98,9 +98,9 @@ export default function CapitalWeather({
                             <Title level={5}>{weather?.temp_c}ºC</Title>
                         )}
                         {weather?.is_day ? (
-                            <SunOutlined className="pl-2" />
+                            <SunOutlined className="pl-2 mb-2" />
                         ) : (
-                            <MoonOutlined className="pl-2" />
+                            <MoonOutlined className="pl-2 mb-2" />
                         )}
                     </div>
                     
@@ -144,19 +144,20 @@ export default function CapitalWeather({
                         </div>
                     </div>
 
-                    <div className='flex justify-between'>
+                    <div className='flex gap-2 justify-between'>
                         {
                             weather.forecast.map((day, index) => {
                                 return (
                                     <div key={index} className='flex flex-col'>
                                         <Image
+                                        preview={false}
                                         src={day.condition.icon}
                                         alt={day.condition.text}
                                         className="w-20 h-20"
                                         ></Image>
-                                        <Title level={5}>
-                                            {new Date(day.date).toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit', year: '2-digit' })}
-                                        </Title>
+                                        <Text className='text-center'>
+                                            {new Date(day.date).toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit'})}
+                                        </Text>
                                     </div>
                                     )
                                 })
